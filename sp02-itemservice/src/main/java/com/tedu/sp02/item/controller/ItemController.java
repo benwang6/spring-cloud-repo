@@ -1,6 +1,7 @@
 package com.tedu.sp02.item.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,8 +27,16 @@ public class ItemController {
 	private int port;
 	
 	@GetMapping("/{orderId}")
-	public JsonResult<List<Item>> getItems(@PathVariable String orderId) {
+	public JsonResult<List<Item>> getItems(@PathVariable String orderId) throws Exception {
 		log.info("server.port="+port+", orderId="+orderId);
+		
+		 ///--设置随机延迟
+		long t = new Random().nextInt(5000);
+		if(Math.random()<0.6) { 
+			log.info("item-service-"+port+" - 暂停 "+t);
+			Thread.sleep(t);
+		}
+		///~~
 		
 		List<Item> items = itemService.getItems(orderId);
 		return JsonResult.ok(items).msg("port="+port);
