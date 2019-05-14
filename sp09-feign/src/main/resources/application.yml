@@ -20,3 +20,15 @@ item-service:
     ReadTimeout: 1000
     MaxAutoRetriesNextServer: 2
     MaxAutoRetries: 1
+    
+feign:
+  hystrix:
+    enabled: true
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 500
