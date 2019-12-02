@@ -6,31 +6,31 @@ import lombok.Setter;
 @Getter
 @Setter
 public class JsonResult<T> {
-	/** ³É¹¦ */
+	/** æˆåŠŸ */
 	public static final int SUCCESS = 200;
 
-	/** Ã»ÓĞµÇÂ¼ */
+	/** æ²¡æœ‰ç™»å½• */
 	public static final int NOT_LOGIN = 400;
 
-	/** ·¢ÉúÒì³£ */
+	/** å‘ç”Ÿå¼‚å¸¸ */
 	public static final int EXCEPTION = 401;
 
-	/** ÏµÍ³´íÎó */
+	/** ç³»ç»Ÿé”™è¯¯ */
 	public static final int SYS_ERROR = 402;
 
-	/** ²ÎÊı´íÎó */
+	/** å‚æ•°é”™è¯¯ */
 	public static final int PARAMS_ERROR = 403;
 
-	/** ²»Ö§³Ö»òÒÑ¾­·ÏÆú */
+	/** ä¸æ”¯æŒæˆ–å·²ç»åºŸå¼ƒ */
 	public static final int NOT_SUPPORTED = 410;
 
-	/** AuthCode´íÎó */
+	/** AuthCodeé”™è¯¯ */
 	public static final int INVALID_AUTHCODE = 444;
 
-	/** Ì«Æµ·±µÄµ÷ÓÃ */
+	/** å¤ªé¢‘ç¹çš„è°ƒç”¨ */
 	public static final int TOO_FREQUENT = 445;
 
-	/** Î´ÖªµÄ´íÎó */
+	/** æœªçŸ¥çš„é”™è¯¯ */
 	public static final int UNKNOWN_ERROR = 499;
 	
 	private int code;
@@ -87,6 +87,8 @@ public class JsonResult<T> {
 	
 	@Override
 	public String toString() {
+		system.out.println("å—äº¬ä¸­å¿ƒå‘æ¥è´ºç”µ")
 		return JsonUtil.to(this);
+		
 	}
 }
