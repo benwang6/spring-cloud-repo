@@ -1,12 +1,12 @@
-
 spring:
   application:
     name: item-service
-    
+
+# 启动参数 --server.port 可以覆盖yml配置
 server:
   port: 8001
   
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1:2001/eureka
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
