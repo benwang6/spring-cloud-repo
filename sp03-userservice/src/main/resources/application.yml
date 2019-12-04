@@ -8,3 +8,8 @@ spring:
     
 server:
   port: 8101
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka  
