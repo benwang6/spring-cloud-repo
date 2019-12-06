@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cn.tedu.sp01.pojo.User;
 import cn.tedu.web.util.JsonResult;
 
-@FeignClient("user-service")
+@FeignClient(name="user-service", fallback = UserFeignServiceFB.class)
 public interface UserFeignService {
 	@GetMapping("/{userId}")
 	JsonResult<User> getUser(@PathVariable Integer userId);
