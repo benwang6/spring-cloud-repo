@@ -1,15 +1,28 @@
 spring:
   application:
     name: config-server
+  profiles:
+    active: native
   
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/benwang6/sp-config
-          searchPaths: config
-          #username: your-username
-          #password: your-password
+        native:
+          search-locations: classpath:/config
+
+#        git:
+#          uri: https://github.com/你的用户路径/sp-config
+#          searchPaths: config
+#          username: your-username
+#          password: your-password
+        
+    
+  rabbitmq:
+    host: 192.168.64.140
+    port: 5672
+    username: admin
+    password: admin
+
     
 server:
   port: 6001
@@ -18,3 +31,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
