@@ -11,7 +11,7 @@
 #      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
 #
 #zuul:
-#  retryable: true
+#  retryable: false
 #
 ##    默认配置,可以省略
 ##  routes:
@@ -37,4 +37,4 @@
 #  endpoints:
 #    web:
 #      exposure:
-#        include: hystrix.stream
+#        include: *
